@@ -6,12 +6,16 @@ build-backend = "setuptools.build_meta"
 name = "dotfiles-mcp"
 version = "0.1.0"
 description = "MCP server for dotfiles managed with bare git repository"
+requires-python = ">=3.13"
 dependencies = [
+    "asyncio>=3.4.3",
     "mcp>=0.1.0",
 ]
 
 [project.scripts]
-dotfiles-mcp = "dotfiles_mcp.main:main"
+dotfiles-mcp = "main:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
+include = ["*"]
+exclude = ["tests"]
